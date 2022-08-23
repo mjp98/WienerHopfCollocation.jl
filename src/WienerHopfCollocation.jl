@@ -22,12 +22,12 @@ import RiemannHilbert: collocationpoints
 
 export isabove, preallocate, precompute
 export WienerHopfEq
-export collocationrhs, collocationmatrix
+export collocationrhs, collocationmatrix, collocationmatrix!, collocationrhs!
 
 include("problem.jl")
 include("split.jl")
 include("solution.jl")
-
+include("cauchy.jl")
 
 collocationpoints(x::ProblemWHC) = collocationpoints(space(x),collocation(x))
 collocationpoints(x::Space,s::CollocationSpec) = points(x,ncollocation(s))
