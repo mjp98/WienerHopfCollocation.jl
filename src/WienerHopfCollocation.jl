@@ -139,6 +139,35 @@ function fpstieltjesmatrix2!(C, sp, d, pts2::Vector{T}) where {T}
     C
 end
 
+vanish_a(n,T=Float64) = fill(one(T), 1, n)
+vanish_b(n,T=Float64) = ((-one(T)).^(0:n - 1))'
+
+function vanish_ab!(C::Matrix{T}) where T
+    (m, n) = size(C)
+    C[1,1:n] = vanish_a(n, T)
+    C[m,1:n] = vanish_b(n, T)
+    return C
+end
+
+function ensure_vanish!(C::Matrix{T}) where T
+    (m, n) = size(C)
+    C[1,1:n] = vanish_a(n, T)
+    C[m,1:n] = vanish_b(n, T)
+    return C
+end
+
+function append_vanish(C::Matrix{T}) where T
+    (m, n) = size(C)
+    return [vanish_a(n, T);C;vanish_b(n, T)]
+end
+
+function append_zeros(C::Matrix{T}) where T
+    (m, n) = size(C)
+    zerorow = fill(zero(T), 1, n)
+    return [zerorow;C;zerorow]
+end
+
+
 function myevaluationmatrix(basis::BasisSpec, pts::Vector{T}) where {T}
     @unpack n, sp = basis
     m = length(pts)
