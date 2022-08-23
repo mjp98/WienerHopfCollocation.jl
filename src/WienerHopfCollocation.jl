@@ -18,11 +18,14 @@ using UnPack
 
 
 import Base: size
-import RiemannHilbert: collocationpoints
+import RiemannHilbert: collocationpoints, orientedleftendpoint, orientedleftendpoint
 
 export isabove, preallocate, precompute
 export WienerHopfEq
 export collocationrhs, collocationmatrix, collocationmatrix!, collocationrhs!
+
+
+@forward ScaledSegmentLine.line orientedleftendpoint, orientedleftendpoint
 
 include("problem.jl")
 include("split.jl")
