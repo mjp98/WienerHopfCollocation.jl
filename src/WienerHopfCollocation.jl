@@ -20,7 +20,8 @@ using UnPack
 import Base:size
 
 export isabove, preallocate, precompute
-
+export WienerHopfEq
+export collocationrhs, collocationmatrix
 
 include("problem.jl")
 include("split.jl")
