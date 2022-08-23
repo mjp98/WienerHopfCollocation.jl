@@ -18,7 +18,7 @@ using UnPack
 
 
 import Base: size
-import RiemannHilbert: collocationpoints, orientedleftendpoint, orientedrightendpoint
+import RiemannHilbert: collocationpoints, orientedleftendpoint, orientedrightendpoint, evaluationmatrix!
 
 export isabove, preallocate, precompute
 export WienerHopfEq
@@ -143,7 +143,7 @@ function myevaluationmatrix(basis::BasisSpec, pts::Vector{T}) where {T}
     @unpack n, sp = basis
     m = length(pts)
     E = Matrix{T}(undef, m, n)
-    return evaluationmatrix( sp, deepcopy(pts))
+    return evaluationmatrix!(E, sp, deepcopy(pts))
 end
 
 function filename_cauchymatrix(sp, m, n)
