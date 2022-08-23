@@ -25,7 +25,8 @@ export WienerHopfEq
 export collocationrhs, collocationmatrix, collocationmatrix!, collocationrhs!
 
 
-@forward ScaledSegmentLine.line orientedleftendpoint, orientedleftendpoint
+orientedleftendpoint(d::ScaledSegmentLine) = orientedleftendpoint(d.line)
+orientedrightendpoint(d::ScaledSegmentLine) = orientedrightendpoint(d.line)
 
 include("problem.jl")
 include("split.jl")
