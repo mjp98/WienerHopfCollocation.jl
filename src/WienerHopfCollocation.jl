@@ -148,9 +148,11 @@ function filename_cauchymatrix(sp, m, n)
     if real(cfeltype(sp)) <: BigFloat
         @warn "precision of bigfloats not saved - if loading old data and have changed precision, delete file to recompute"
     end
-    sc = string(Int(log10(domain(sp).scale)))
-    !isdirpath("cauchydata") && mkdir("cauchydata")
-    filename = "cauchydata/cauchymatrix_m" * string(Int(m)) * "_n" * string(Int(n)) * "_oftype_" * T * "scale_" * sc * ".jld2"
+   # sc = string(Int(log10(domain(sp).scale)))
+    !isdir("cauchydata") && mkdir("cauchydata")
+   # filename = "cauchydata/cauchymatrix_m" * string(Int(m)) * "_n" * string(Int(n)) * "_oftype_" * T * "scale_" * sc * ".jld2"
+
+   filename = "cauchydata/cauchymatrix_m" * string(Int(m)) * "_n" * string(Int(n)) * "_oftype_" * T * ".jld2"
     return filename
 end
 
