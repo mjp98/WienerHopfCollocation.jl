@@ -18,7 +18,7 @@ using UnPack
 
 
 import Base: size
-import RiemannHilbert: collocationpoints, orientedleftendpoint, orientedleftendpoint
+import RiemannHilbert: collocationpoints, orientedleftendpoint, orientedrightendpoint
 
 export isabove, preallocate, precompute
 export WienerHopfEq
