@@ -18,6 +18,7 @@ using UnPack
 
 
 import Base:size
+import RiemannHilbert: collocationpoints
 
 export isabove, preallocate, precompute
 export WienerHopfEq
@@ -26,6 +27,11 @@ export collocationrhs, collocationmatrix
 include("problem.jl")
 include("split.jl")
 include("solution.jl")
+
+
+collocationpoints(x::ProblemWHC) = collocationpoints(space(x),collocation(x))
+collocationpoints(x::Space,s::CollocationSpec) = points(x,ncollocation(s))
+
 
 # Rewrite
 

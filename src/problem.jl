@@ -76,4 +76,4 @@ equation(x::ProblemWHC) = x.equation
 numerics(x::ProblemWHC) = x.numerics
 
 @forward ProblemWHC.equation Base.size
-@forward ProblemWHC.numerics collocation, space, basis, nbasis, ncollocation, ifvanish, ifsave
+@forward ProblemWHC.numerics collocation, space, basis, nbasis, ncollocation, ifvanish, ifsave, collocationpoints
