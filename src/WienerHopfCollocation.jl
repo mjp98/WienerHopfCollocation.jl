@@ -28,6 +28,8 @@ export collocationrhs, collocationmatrix, collocationmatrix!, collocationrhs!
 orientedleftendpoint(d::ScaledSegmentLine) = orientedleftendpoint(d.line)
 orientedrightendpoint(d::ScaledSegmentLine) = orientedrightendpoint(d.line)
 
+include("helpers/vanish.jl")
+
 include("problem.jl")
 include("split.jl")
 include("solution.jl")
@@ -141,7 +143,7 @@ function myevaluationmatrix(basis::BasisSpec, pts::Vector{T}) where {T}
     @unpack n, sp = basis
     m = length(pts)
     E = Matrix{T}(undef, m, n)
-    return evaluationmatrix!(E, sp, deepcopy(pts))
+    return evaluationmatrix( sp, deepcopy(pts))
 end
 
 function filename_cauchymatrix(sp, m, n)
