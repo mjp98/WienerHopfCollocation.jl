@@ -28,7 +28,7 @@ export collocationrhs, collocationmatrix, collocationmatrix!, collocationrhs!
 orientedleftendpoint(d::ScaledSegmentLine) = orientedleftendpoint(d.line)
 orientedrightendpoint(d::ScaledSegmentLine) = orientedrightendpoint(d.line)
 
-include("helpers/vanish.jl")
+#include("helpers/vanish.jl")
 
 include("problem.jl")
 include("split.jl")
