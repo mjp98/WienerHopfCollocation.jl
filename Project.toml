@@ -23,6 +23,7 @@ WienerHopf = "ac0c8dbe-b04b-11e9-2708-77ad36e1f2f5"
 [compat]
 ApproxFun = "0.13.5"
 SingularIntegralEquations = "0.7"
+StaticArrays = "1"
 julia = "1.7, 1.8"
 
 [extras]
