@@ -15,8 +15,7 @@ using RiemannHilbert
 using StaticArrays
 using UnPack
 @reexport using WienerHopf
-
-
+import CommonSolve: init, solve!
 import Base: size
 import RiemannHilbert: collocationpoints, orientedleftendpoint, orientedrightendpoint, evaluationmatrix!
 
