@@ -5,29 +5,36 @@ version = "0.1.0"
 
 [deps]
 ApproxFun = "28f2ccd6-bb30-5033-b560-165f7b14dc2f"
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
 BlockArrays = "8e7c35d0-a365-5155-bbbb-fb81a777f24e"
 CommonSolve = "38540f10-b2f7-11e9-35d8-d573e4eb0ff2"
 DomainSets = "5b8099bc-c8ec-5219-889f-1d9e522a28bf"
 FastLapackInterface = "29a986be-02c6-4525-aec4-84b980013641"
+FileIO = "5789e2e9-d7fb-5bc7-8068-2c6fae9b9549"
+GenericLinearAlgebra = "14197337-ba66-59df-a3e3-ca00e7dcff7a"
 JLD2 = "033835bb-8acc-5ee8-8aae-3f567f8a3819"
 Lazy = "50d2b5c4-7a5e-59d5-8109-a42b560f39c0"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+OffsetArrays = "6fe1bfb0-de20-5000-8ca7-80f57d26f881"
+Parameters = "d96e819e-fc66-5662-9728-84c9c7592b0a"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+ProgressMeter = "92933f4c-e287-5a05-a399-4b506db050ca"
 Reexport = "189a3867-3050-52da-a836-e630ba90ab69"
 RiemannHilbert = "79305c5b-9889-52e9-bdbd-56f883c71fe0"
 ScaledLines = "477db0d3-c149-468e-ab7b-d482e46444c0"
+Setfield = "efcf1570-3423-57d1-acb7-fd33fddbac46"
 SingularIntegralEquations = "e094c991-5a90-5477-8896-c1e4c9552a1a"
 StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
 UnPack = "3a884ed6-31ef-47d7-9d2a-63182c4928ed"
+Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
 WienerHopf = "ac0c8dbe-b04b-11e9-2708-77ad36e1f2f5"
 
 [compat]
-ApproxFun = "0.13.5"
-DomainSets = "0.5.11"
-SingularIntegralEquations = "0.7"
-julia = "1.7, 1.8"
+julia = "1.8"
 
 [extras]
+GenericLinearAlgebra = "14197337-ba66-59df-a3e3-ca00e7dcff7a"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [targets]
-test = ["Test"]
+test = ["Test", "GenericLinearAlgebra"]
