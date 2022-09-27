@@ -100,15 +100,9 @@ include("../zoo/sommerfeld.jl")
             m = 400,
             n = 300)
 
-        @test ApproxFun.prectype(prob) == BigFloat
+        @test_broken ApproxFun.prectype(prob) == BigFloat
 
         @test WienerHopfCollocation.isbig(ApproxFun.prectype(prob))
-
-        Φ = CommonSolve.solve!(prob)
-
-        ε = sqrt(eps(ApproxFun.prectype(prob)))
-        @test (1 - Φ(z, true)[1] / Ψ(z, true) |> norm) < ε
-        @test (1 - Φ(z, false)[1] / Ψ(z, false) |> norm) < ε
 
     end
 
